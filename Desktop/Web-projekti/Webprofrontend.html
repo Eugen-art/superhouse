@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The largest countries by population</title>
+
+    <style type="text/css">
+        body{
+            font-family: Arail, sans-serif;
+        }
+
+    </style>
+
+
+    <script>
+        function showState(str) {
+            if (str == "") {
+                document.getElementById("web_project").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("web_project").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET","backend-search.php?q="+str,true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div class="search-box">
+    <input type="text" autocomplete="off" placeholder="Search country..." />
+    <div class="result"></div>
+</div>
+
+
+
+<h1>The largest countries by population</h1>
+
+<figure>
+    <img src="C:\Users\Evgeni\Desktop\Largest\Largesta.jpg" alt="Largest countries"/>
+    <figcaption>Photo: Largest countries</figcaption>
+</figure>
+
+
+<h2>Table</h2>
+
+</body>
+</html>
